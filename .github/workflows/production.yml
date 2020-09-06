@@ -3,8 +3,9 @@ name: production-deploy
 on:
   pull_request:
     branches: [ master ]
-
+    types: [closed]
 jobs:
+  if: github.event.pull_request.merged == true
   build:
     runs-on: ubuntu-latest
 
